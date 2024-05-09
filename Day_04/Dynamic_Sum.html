@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <center>
+        <div>
+            Enter number of textboxes: <br><br>
+            <input type="text" id="t1"> <br><br>
+            <button id="b1">Create</button> <br><br>
+        </div>
+
+        <div id="boxc"></div>
+
+        <button id="b2">Calculate Sum</button> <br><br>
+        <p id="sumr"></p>
+    </center>
+    
+</body>
+
+</html>
+
+<script>
+
+    var b1 = document.querySelector("#b1");
+
+    b1.addEventListener('click', function () {
+        const t1 = parseInt(document.getElementById('t1').value);
+        const container = document.getElementById('boxc');
+
+        for (let i = 0; i < t1; i++) {
+            container.innerHTML += `<input type="text" class="textbox" id="textbox_${i + 1}"><br><br>`;
+        }
+    });
+
+    var b2 = document.querySelector("#b2");
+
+    b2.addEventListener('click', function () {
+        const textboxes = document.querySelectorAll('.textbox');
+        let sum = 0;
+        textboxes.forEach(function (textbox) {
+            sum += parseInt(textbox.value)
+        });
+        document.getElementById('sumr').textContent = `The Sum is : ${sum}`;
+    });
+
+</script>
