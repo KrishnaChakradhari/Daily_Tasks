@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+
+</head>
+
+<body>
+    <center>
+        <h2>This is my today's task I created a digital clock using Html and Javascript.</h2>
+
+        <h1>
+            <div id="clock"></div>
+        </h1>
+    </center>
+
+    <script>
+
+        function displayTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var seconds = String(now.getSeconds()).padStart(2, '0');
+            var amPm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12 || 12;
+
+            const timeString = `${hours}:${minutes}:${seconds} ${amPm}`;
+            document.getElementById('clock').innerText = timeString;
+        }
+
+        setInterval(displayTime, 1000);
+
+    </script>
+</body>
+
+</html>
