@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+
+    <style>
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spin {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            animation: spin 2s linear infinite;
+            margin-top: 5%;
+            float: left;
+            margin-left: 20%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <h1>Create squares and rotate using keyframes </h1>
+        <div class="spin"></div>
+        <div class="spin"></div>
+        <div class="spin"></div>
+    </center>
+</body>
+
+</html>
