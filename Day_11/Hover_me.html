@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <style>
+        .animated-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .animated-button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-30px);
+            }
+
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .animated-button:active {
+            animation: bounce 0.5s;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>✨ Excited to Share My Latest CSS Animation Project! ✨</h1>
+        <br><br>
+        <button class="animated-button">Hover Me!</button>
+    </center>
+</body>
+
+</html>
